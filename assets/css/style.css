@@ -84,6 +84,47 @@ body {
     background-size: cover;
   }
 
+  #about {
+    grid-area: about;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 1.5rem;
+    padding-left: 10%;
+    position: relative;
+    display: flex;
+  }
+
+  #about:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.5rem;
+    width: 5.5rem;
+    background-color: #111;
+  }
+
+  #about:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.2rem;
+    height: 0.1rem;
+    width: 96%;
+    max-width: 25.5rem;
+    background-color: #333;
+  }
+
   .about {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "about p";
+  }
+
+  .about p {
+    grid-area: p;
 
   }
