@@ -6,6 +6,7 @@
     --dark: #4f5050;
     --light: #fdd49d;
     --navlink-color: #d8a47f;
+    --header: #22222288;
   }
 
 body {
@@ -13,7 +14,10 @@ body {
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
+    background-image: radial-gradient(var(--light), var(--dark));
+    position: relative;
   }
+
 
   .header {
     padding: 2.0rem;
@@ -21,7 +25,6 @@ body {
     color: var(--light);
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     display: flex;
-
     box-shadow: 0 0 2.5rem 0 black;
   }
 
@@ -84,6 +87,10 @@ body {
     background-size: cover;
   }
 
+  #aboutimg {
+    max-height: 15rem;
+  }
+
   #about {
     grid-area: about;
     font-size: 2.8rem;
@@ -96,7 +103,7 @@ body {
     display: flex;
   }
 
-  #about:before {
+  #about::before {
     content: "";
     position: absolute;
     left: 0;
@@ -106,7 +113,7 @@ body {
     background-color: #111;
   }
 
-  #about:after {
+  #about::after {
     content: "";
     position: absolute;
     left: 0;
@@ -118,13 +125,77 @@ body {
   }
 
   .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .projects {
     display: grid;
-    grid-template-rows: 100%;
+    margin: 0px 5%;
+    padding: 2%;
     grid-template-columns: 50% 50%;
-    grid-template-areas: "about p";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "bigCard bigCard"
+    "smallCard1 smallCard2"
+    "smallCard3 smallCard4";
+    border: 2px solid black;
   }
 
-  .about p {
-    grid-area: p;
-
+  #bigCard {
+    grid-area: bigCard;
+    background-image: url("../images/horiseon.png");
+    height: 25rem;
+    position: relative;
+    background-size: cover;
   }
+
+  #bigCard a[href="https://c-woolrych.github.io/optimize-for-accessibility"] {
+    display: inline-block;
+    width: 100%;
+    height: 25rem;
+    font-size: 0;
+  }
+
+  #bigCard h2 {
+    background-color: var(--header);
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .smallCardHeader{
+    z-index: 1;
+    background-color: var(--header);
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin-top: -5rem;
+  }
+
+   .smallCardimage {
+    background-position: center;
+    max-height: 25rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact {
+    margin: 3%;
+    border: 0.2rem solid black;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact li {
+    display: inline-block;
+    padding-right: 4rem;
+    font-size: 1.5rem;
+  }
+
