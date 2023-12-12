@@ -25,7 +25,6 @@ body {
     color: var(--light);
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     display: flex;
-    box-shadow: 0 0 2.5rem 0 black;
   }
 
   .header h1 {
@@ -198,4 +197,58 @@ body {
     padding-right: 4rem;
     font-size: 1.5rem;
   }
+
+  .footer {
+    padding: 2.0rem;
+    background-color: var(--dark);
+    color: var(--light);
+    display: flex;
+    box-shadow: 0 0 2.5rem 0 black;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header h1 {
+      max-width: 50%;
+      font-size: 75%;
+    }
+
+    #about {
+      display: none;
+    }
+
+    .projects {  
+      display: block;
+      width: 90%;
+    }
+
+    .smallCardimage {
+      display: flex;
+      justify-content: center;
+      max-width: 75%;
+      max-height: 60%;
+    }
+
+    .contact h2 {
+      display: none;
+    }
+
+    .contact li {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .header h1:before h1:after {
+      display: none;
+    }
+
+    .contact li {
+      font-size: 80%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 
